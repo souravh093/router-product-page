@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
     return (
-        <div className="min-h-screen bg-base-50 grid grid-cols-2 items-center container mx-auto">
+        <div className="h-[calc(100vh-116px)] bg-base-50 grid grid-cols-2 items-center container mx-auto">
         <div className="grid grid-cols-1 items-center">
             <div>
             <h1 className="text-7xl font-bold">Buy 1 Get Free</h1>
