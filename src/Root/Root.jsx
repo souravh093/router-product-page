@@ -1,9 +1,15 @@
 import React from 'react';
+import Home from './Home/Home';
+import { Outlet } from 'react-router-dom';
+import Header from './Header/Header';
+import Footer from './Footer/Footer';
 
 const Root = () => {
     return (
         <div>
-            <h1 className='text-3xl'>Root</h1>
+            <Header />
+            <Outlet />
+            <Footer />
         </div>
     );
 };

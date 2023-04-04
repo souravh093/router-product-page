@@ -8,6 +8,9 @@ import {
 import Root from './Root/Root';
 import Error from './Error/Error';
 import Home from './Root/Home/Home';
+import Products from './Root/Products/Products';
+import About from './Root/About/About';
+import ProductDetails from './Root/Products/Product/ProductDetails/ProductDetails';
 
 const router = createBrowserRouter ([
   {
@@ -21,7 +24,13 @@ const router = createBrowserRouter ([
       },
       {
         path: '/products',
-        element: <Products />
+        element: <Products />,
+        loader: () => fetch('https://dummyjson.com/products')
+      },
+      {
+        path: '/product/:id',
+        element: <ProductDetails />,
+        loader: ({params}) => fetch(`https://dummyjson.com/products/${params.id}`)
       },
       {
         path: '/about',
