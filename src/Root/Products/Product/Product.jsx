@@ -1,11 +1,17 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useNavigation } from 'react-router-dom';
+import Spinner from '../../Spinner/Spinner';
 
 const Product = ({product}) => {
     const navigate = useNavigate();
+    const navigation = useNavigation();
+    if (navigation.state === 'loading') {
+        return <Spinner />
+    }
     const productDetails = () => {
         navigate(`/product/${product.id}`);
     }
+    
     return (
         <div className="card w-full border border-gray-300">
         <figure><img className='w-full h-96 object-cover' src={product.thumbnail} alt="Shoes" /></figure>

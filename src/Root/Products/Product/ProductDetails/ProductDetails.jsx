@@ -1,8 +1,13 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigation } from 'react-router-dom';
+import Spinner from '../../../Spinner/Spinner';
 
 const ProductDetails = () => {
-    const details = useLoaderData()
+    const details = useLoaderData();
+    const navigation = useNavigation();
+    if (navigation.state === 'loading') {
+        return <Spinner />  
+    }
     return (
         <section className="text-gray-700 body-font overflow-hidden bg-white">
         <div className="container px-5 py-24 mx-auto">
